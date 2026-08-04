@@ -25,7 +25,8 @@ g++ -std=c++17 manual_serialisation.cpp -o can_config_manual \
     -lPocoJSON -lPocoFoundation
 
 # Reflection version
-export PATH=/opt/gcc-16.1/bin:$PATH
+export PATH=/opt/gcc-16.1/bin:$PATH  
+export LD_LIBRARY_PATH=/opt/gcc-16.1/lib64:$LD_LIBRARY_PATH  
 g++ -std=c++26 -freflection -Wl,-rpath,/opt/gcc-16.1/lib64 \
     reflective_serialisation.cpp -o can_config_reflection \
     -lPocoJSON -lPocoFoundation
