@@ -4,11 +4,11 @@ Manual vs. C++26 reflection-based JSON serialization, same domain type.
 
 ## Files
 
-- `domain.h` — shared `CanDataSource` / `RetryPolicy` definitions. Plain
+- `domain.h`:  shared `CanDataSource` / `RetryPolicy` definitions. Plain
   data only, no serialization logic.
-- `manual_serialisation.cpp` — today's C++ (C++17): hand-written,
+- `manual_serialisation.cpp`: today's C++ (C++17): hand-written,
   field-by-field JSON mapping via `ManualJson`.
-- `reflective_serialisation.cpp` — C++26 (P2996 reflection): one generic
+- `reflective_serialisation.cpp`: C++26 (P2996 reflection): one generic
   `to_json<T>()` that walks any struct's members automatically.
 
 ## Prerequisites
