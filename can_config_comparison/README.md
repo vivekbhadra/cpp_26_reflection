@@ -44,35 +44,4 @@ ship one, so this repo defaults to the bare flags).
 ./can_config_reflection
 ```
 
-Both should print identical JSON.
-
-## Verify identical output
-
-```bash
-diff <(./can_config_manual) <(./can_config_reflection)
-echo "exit: $?"   # 0 = identical
-```
-
-## The actual demonstration: add a field
-
-Edit `domain.h`, add one member to `CanDataSource` (private section and
-constructor):
-
-```cpp
-std::string m_protocol;
-```
-
-Rebuild both binaries.
-
-- `can_config_manual` compiles cleanly and silently omits `"protocol"`
-  from its output — `ManualJson::toJson` was never told the field exists.
-- `can_config_reflection` picks up the new field automatically, with
-  zero changes to `reflective_serialisation.cpp`.
-
-```bash
-./can_config_manual | grep protocol       # nothing
-./can_config_reflection | grep protocol   # present
-```
-
-That gap — same one-line domain edit, silently incomplete vs.
-automatically correct — is the point of this example.
+Both should print identical JSON.  
