@@ -18,7 +18,7 @@ Manual vs. C++26 reflection-based JSON serialization, same domain type.
 - GCC 16.1+ built with `-freflection` support for the reflection version
 
 ## Build
-For C++26 build you may refer to this link: https://techfortalk.co.uk/2026/05/04/compile-your-first-c26-program-with-gcc-16-1/  
+For instructions on setting up GCC 16.1 and compiling your first C++26 program, see [Compile Your First C++26 Program with GCC 16.1](https://techfortalk.co.uk/2026/05/04/compile-your-first-c26-program-with-gcc-16-1/).   
 ```bash
 # Manual version
 g++ -std=c++17 manual_serialisation.cpp -o can_config_manual \
