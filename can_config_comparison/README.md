@@ -38,29 +38,6 @@ If Poco isn't on your default include/lib path, add
 instead of the bare `-l` flags (Ubuntu's `libpoco-dev` package does not
 ship one, so this repo defaults to the bare flags).
 
-## Verification status
-
-- **`manual_serialisation.cpp`** — compiled and run successfully with
-  `g++ 13.3.0 -std=c++17` against `libpoco-dev 1.11.0` on Ubuntu 24.04.
-  Confirmed output:
-  ```json
-  {
-      "bitrate": 250000,
-      "canLine": "can1",
-      "extendedFrame": true,
-      "id": "can-source-1",
-      "pgnPassFilter": ["FEF1", "FEEE"],
-      "retryPolicy": {"backoffMs": 500, "jitterEnabled": true, "maxAttempts": 3}
-  }
-  ```
-- **`reflective_serialisation.cpp`** — **not compiled in this repo's test
-  environment**, since GCC 16.1 with `-freflection` isn't available here.
-  Reviewed for API consistency with GCC 16.1's documented P2996 support
-  (`std::meta::nonstatic_data_members_of`, `access_context::unchecked()`,
-  `identifier_of`, `template for`, `^^`/`[: :]`). **Build it against your
-  own GCC 16.1 install and confirm output matches the manual version
-  before publishing.**
-
 ## Run
 
 ```bash
