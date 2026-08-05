@@ -12,11 +12,12 @@
 //   g++ -std=c++17 manual_serialisation.cpp -o can_config_manual \
 //       $(pkg-config --cflags --libs poco-json)
 
+#include "can_data_source.h"
+
 #include <Poco/JSON/Array.h>
 #include <Poco/JSON/Object.h>
 #include <iostream>
 #include <sstream>
-#include "domain.h"
 
 struct ManualJson
 {
@@ -56,7 +57,10 @@ struct ManualJson
 
 int main()
 {
-    const CanDataSource source{"can-source-1", "can1", 250000, true,
+    const CanDataSource source{"can-source-1",
+                               "can1",
+                               250000,
+                               true,
                                {0xFEF1, 0xFEEE},
                                RetryPolicy{3, 500, true}};
 
