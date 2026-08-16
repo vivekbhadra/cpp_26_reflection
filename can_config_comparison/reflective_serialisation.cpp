@@ -79,12 +79,8 @@ Poco::JSON::Object to_json(const T& source)
 
 int main()
 {
-    const CanDataSource source{"can-source-1",
-                               "can1",
-                               250000,
-                               true,
-                               {0xFEF1, 0xFEEE},
-                               RetryPolicy{3, 500, true}};
+    const CanDataSource
+        source{"can-source-1", "can1", 250000, true, {0xFEF1, 0xFEEE}, RetryPolicy{3, 500, true}};
 
     to_json(source).stringify(std::cout, 4);
     std::cout << "\n";
