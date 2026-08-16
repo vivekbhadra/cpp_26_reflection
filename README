@@ -1,0 +1,11 @@
+export PATH=/opt/gcc-16.1/bin:$PATH
+export LD_LIBRARY_PATH=/opt/gcc-16.1/lib64:$LD_LIBRARY_PATH
+
+~/cpp_26_reflection$ g++ -std=c++26 \
+    -freflection \
+    -Wall \
+    -Wextra \
+    -Wpedantic \
+    sensor_config_validation.cpp \
+    -o sensor_config_validation
+
